@@ -1,11 +1,7 @@
 /**
  * Created by pravin.katekhaye on 2/24/2016.
- 
- 
  *description :
                 Following controller maintains the show favorite Hashtags and retrives the tweets releated to them */
- 
- 
 (function () {
 
     angular.module('twitterApp')

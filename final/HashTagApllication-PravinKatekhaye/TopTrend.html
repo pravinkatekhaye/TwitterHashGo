@@ -1,0 +1,118 @@
+<!----   html code for navigation bar ---->
+ <div class="container-fluid" id="main" ng-init="myFavourite='';">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- add header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">HashGo</a>
+            </div><!--End of navbar header-->
+            <!-- add menu -->
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="nav navbar-nav" class="active">
+                    <li ><a ng-click="redirectToHome()" id="">Home</a></li>
+                    <li ><a ng-click="redirectToTopTrend()" id="toptrend">Top Trend</a></li>
+                    <li ><a ng-click="redirectToFavoriteHashtag()"  >My Favorite Hashtags</a></li>
+                </ul>
+                <!-- add search form -->
+
+                </form><!-- End of search textbox form-->
+            </div><!--End of collapse navbar-->
+        </div><!--End of container of nav-->
+    </nav><!--End of navigation bar -->
+    <div>
+        <!---searchtitle bar--->
+        <div class="serachtitle">
+            <h1 class="AdaptiveSearchTitle-title">{{selectedahashtag}} </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3 " id="left-side-section">
+                <h3 id="trend_name">{{changedplaceValue}} Trends</h3><span ng-click="changePlace()" class="glyphicon glyphicon-filter"></span>
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 id="model-box-heading">Filter Trends By Location </h4>
+                            </div>
+                            <div class="modal-body" id="formauto">
+                                <h5>Select City from autocomplete list</h5>
+                               <div class="form-group">
+                                    <input type="text" id="autocompletevalue" class="form-control" ng-model="location"  placeholder="Search location" />
+                                   <div style="position: absolute">
+                                      <div   id="log" ng-repeat="x in citiesList|filter:location track by $index">
+                                        <div ng-show="location.length>2? 1:0" ng-click="changemodel(x)">{{x}} </div>
+                                     </div>
+                                  </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" ng-click="changeTrendLocation(location)" data-dismiss="modal">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                    </div>
+                    </div>
+                <div class="row" ng-repeat="t in tweets track by $index">
+               <div id="trends">
+              <span ng-click="setFavoriteHashTagList(tweets[$index])"title="favorite">
+              <span class="glyphicon glyphicon-star" ng-click="myFavourite='selectedFavTag' " ng-class="appliedClass(t)" id="fav_star"></span>
+              </span>
+                   <span id="hashtag"  ng-click="getHashTagDetail(tweets[$index])">{{t}}</span>
+				</div>
+                </div>
+                <div ng-show="rateLimitError">
+                    Rate limit reached. You are making too many requests.
+                </div>
+            </div><!--End of left side col-md-3-->
+            <div class="col-md-6">
+                <div id="wrapper">
+                    <div class="panel-info">
+                        <div class="panel-body">
+                            <ul class="media-list" ng-repeat="t in relatedtweets track by $index">
+                                <li class="media">
+                                    <a class="pull-left">
+                                        <img ng-src='{{userprofilepic[$index]}}' alt class="img-circle">
+                                    </a>
+                                    <strong class="text-success">{{userscreen_name[$index]}}</strong>
+                                    <p id="tweets_desc">{{t}}</p>
+                                    <br>
+                                    <div id="button section">
+                                        <a title="share" class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-share-alt"></span>
+                                        </a>
+                                        <a title="retweet" class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-retweet"></span>{{retweetcount[$index]}}
+                                        </a>
+                                        <a title="like" class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-heart" ng-click="requestForLike(tweetsId[$index])"></span>{{likedtweetcount[$index]}}
+                                        </a>
+
+                                    </div>
+                                </li><!--End of media-->
+                            </ul><!-- End of media list-->
+                           <!--- error page-->
+                            <div id="errorwindow" ng-if="errorflag===1" class="alert alert-info">
+                                <strong>Info!</strong> Too many Requests sent.Please wait for about 15 minutes.
+                            </div>
+                             <div class="alert alert-info" id="errorwindow2" ng-show="response===0">
+                                 <strong>Info!</strong> No Tweets Found for this keyword.
+                            </div>
+							<div class="alert alert-info" id="errorwindow3" ng-show="errorflagforplace===1">
+							<a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                 <strong>Error!</strong> please input valid place.
+                            </div>
+                           <!--error page end-->
+                        </div><!-- End of panel body-->
+                    </div><!-- End of panel info-->
+                </div><!--End of Wrapper-->
+            </div><!---End of col-mf-6-->
+        </div><!--End of div row-->
+    </div>
+</div>  <!--End of main container-->
+

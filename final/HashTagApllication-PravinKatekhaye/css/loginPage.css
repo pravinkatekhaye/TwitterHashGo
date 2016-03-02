@@ -1,0 +1,55 @@
+
+    @import url(http://fonts.googleapis.com/css?family=Oswald);
+
+    #loginPageWrapper{
+        width: 100%;
+        height: 100%;
+        background: #c8dfeb;
+        font-size: 14px;
+    }
+    /* Title */
+    #titleLoginPage {
+        color:  #3026A4;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin-top: 50px;
+        font-size: 62px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    /* Styles for buttons container */
+    .container1 {
+        left: 50%;
+        margin: -114px 0 0 -149px;
+        position: absolute;
+        top: 50%;
+    }
+    /* Twitter */
+    .twi-bg {
+        background: #45b0e3;
+        height: 37px;
+        margin: 0 0 30px 60px;
+        width: 166px;
+    }
+    .twi-bg:after {
+        color: #fff;
+        content: "sign in with twitter";
+        font-family: 'Oswald', sans-serif;
+        height: 37px;
+        left: 11%;
+        position: relative;
+        text-transform: uppercase;
+        top: 22%;
+        width: 41px;
+    }
+    .twi-bg:hover {
+        cursor: pointer;
+    }
+    .twi-bg:active {
+        background: #40a2d1;
+    }
+    .icon{
+        content: url(http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Twitter-icon.png);
+    }
+

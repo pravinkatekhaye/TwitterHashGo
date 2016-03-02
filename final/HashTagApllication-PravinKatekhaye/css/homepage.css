@@ -1,0 +1,113 @@
+   /*css for serach bar*/
+    .serachtitle{
+        text-align: center;
+        background-color: #2B7BB9 !important;
+        color:white;
+    }
+    h1.AdaptiveSearchTitle-title{
+        padding: 15px;
+        margin-top: -10px;
+    }
+    /*css to related tweets*/
+    .media-list {
+        padding-left: 0;
+        list-style: none;
+    }
+    .media{
+        border-bottom: 1px dashed #efefef;
+        margin-bottom: 25px;
+    }
+    img {
+        width: 80px;
+        height: 81px;
+    }
+    .wrapper{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color:white;
+        border-color: #bce8f1;
+    }
+    .panel-info>.panel-heading {
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+    }
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .panel-info{
+        border-color: #bce8f1;
+    }
+    .wrapper .panel-body {
+        max-height: 650px;
+        overflow: auto;
+    }
+    #tweetsContainer {
+        margin-right: -15px;
+        margin-left: -5px;
+    }
+    a:link{
+        text-decoration: none;
+    }
+    #navbar1{
+        cursor: pointer;
+    }
+    #left-side-section{
+        background-color:white;
+        color:white;
+        margin-left: 6px;
+        margin-right: 15px;
+    }
+	.counts{
+	margin-left:0;
+	padding-left:0;
+	}
+	.glymphicon_button{
+	 padding-right:30px
+	}
+    #tweets_desc{
+        min-height: 57px;
+    }
+    #loader{
+        margin: 200px 40%;
+        background-color: transparent;
+    }
+    /*profile page css*/
+        .title-pen {
+      color: #070F68;
+      font-family: "Coda", sans-serif;
+      text-align: center;
+    }
+    .title-pen span {
+      color: #55acee;
+    }
+    .user-profile {
+      margin: auto;
+        width: 25em;
+      height: 11em;
+      border-radius: .3em;
+    }
+
+    .user-profile  .username {
+      margin: auto;
+      margin-top: -4.40em;
+      margin-left: 4.80em;
+      color: white;
+      font-size: 1.53em;
+      font-family: "Coda", sans-serif;
+      font-weight: bold;
+    }
+
+    .user-profile > img.avatar {
+        padding: .7em;
+      margin-left: -0.8em;
+      margin-top: .3em;
+      height: 8.23em;
+      width: 8.23em;
+      border-radius: 18em;
+    }

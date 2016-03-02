@@ -1,0 +1,99 @@
+<!----   html code for navigation bar ---->
+<div class="container-fluid" id="main">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- add header -->
+            <div class="navbar-header" ng-init="activeclass=''">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ng-click="redirectToHome()">HashGo</a>
+            </div><!--End of navbar header-->
+            <!-- add menu -->
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="nav navbar-nav active">
+                    <li ><a ng-click="redirectToHome()" id="">Home</a></li>
+                    <li ><a ng-click="redirectToTopTrend()" id="toptrend">Top Trend</a></li>
+                    <li ><a ng-click="redirectToFavoriteHashtag()">My Favorite Hashtags</a></li>
+                </ul>
+                <!-- add search form -->
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="trendLocation" placeholder="Search for tweets">
+                     <span class="input-group-btn">
+                         <button type="submit" ng-click="getTweetsDetail(trendLocation)" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                     </span>
+                    </div><!--End of input  class-->
+                </form><!-- End of search textbox form-->
+            </div><!--End of collapse navbar-->
+        </div><!--End of container of nav-->
+    </nav><!--End of navigation bar -->
+    <div><!-- End of container-->
+<!---navigation bar code end--->
+
+       <!---- search Bar-->
+        <div class="serachtitle">
+            <h1 class="AdaptiveSearchTitle-title">{{selectedahashtag}} </h1>
+        </div>
+       <!---search bar html code end-->
+        <div class="row"id="tweetsContainer">
+            <div class="col-md-3 hidden-xs" id="left-side-section">
+                <h1 class="title-pen"> User Profile </h1>
+                 <div class="user-profile">
+                <img class="avatar" ng-src='{{profilepic}}'/>
+                <div class="username">{{username}}</div>
+                </div>
+            </div><!--End of left side col-md-3-->
+            <div class="col-md-6">
+                <div id="wrapper"> <!--wrapper for twitter section-->
+                    <div class="panel-info">
+                        <div class="panel-body">
+                            <ul class="media-list" ng-repeat="t in relatedtweets track by $index">
+
+                                <li class="media">
+                                    <a  class="pull-left">
+                                        <img ng-src='{{userprofilepic[$index]}}' alt class="img-circle"/>
+                                    </a>
+                                    <strong class="text-success">{{userscreen_name[$index]}}</strong>
+                                    <p id="tweets_desc">{{t}}</p>
+                                    <br>
+                                    <div id="button section">
+                                        <a title="share"class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-share-alt"></span>
+                                        </a>
+                                        <a title="retweet"class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-retweet"></span>{{retweetcount[$index]}}
+                                        </a>
+                                        <a title="like"class="glymphicon_button">
+                                            <span class="glyphicon glyphicon-heart" ng-click="requestForLike(tweetsId[$index])"></span>{{likedtweetcount[$index]}}
+                                        </a>
+                                    </div>
+                                </li><!--End of media-->
+                            </ul><!-- End of media list-->
+                            <!--- loader-->
+                            <div id="loader" ng-if="loaderflag===1"><img src="images/484.gif"/></div>
+                            <!---end loader-->
+                            <!---error popup when error occure from server-->
+                            <div id="errorwindow" ng-if="errorflag===1" class="alert alert-info">
+                                <strong>Info!</strong> Too many Requests sent.Please wait for about 15 minutes.
+                            </div>
+                            <!--end error popup-->
+
+                            <!--error popup when error occure due to invalid text enter-->
+                            <div class="alert alert-info" id="errorwindow2" ng-If="response===0">
+                                <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Info!</strong>Search Invalid Please enter Valid kyeword.
+                            </div>
+                            <!--end-->
+                        </div><!-- End of panel body-->
+                    </div><!-- End of panel info-->
+                </div><!--End of Wrapper-->
+            </div><!---End of col-mf-6-->
+        </div>
+    </div>
+</div><!-- end of main-->

@@ -1,0 +1,86 @@
+
+    .serachtitle{
+        text-align: center;
+        background-color: #0764AD  !important;
+        color:white;
+    }
+    h1.AdaptiveSearchTitle-title{
+        padding: 15px;
+        margin-top: -10px;
+    }
+    .row {
+        margin-right: -15px;
+        margin-left: -5px;
+    }
+    #top_trend{
+        margin-top: 20px;
+    }
+    #favoright_hashtag{
+
+        background-image: linear-gradient(to bottom,#5bc0de 0,#2aabd2 100%)
+    }
+    #hashtag{
+        color:#171B35;
+        cursor: pointer;
+		font-size: 20px;
+    }
+    #hashtag:hover{
+        color:white;
+    }
+    a:link{
+        text-decoration: none;
+    }
+    #hashtag_section{
+        background-color:#31323B;
+    }
+    #fav_star{
+        color: #FCFAFA;
+    }
+
+    #favoritehashtag_section{
+        background-color: #3f51b5;
+        color:white;
+    }
+    #navbar1{
+        cursor: pointer;
+    }
+    #left-side-section{
+        background-color: rgba(3, 169, 244, 0.62);
+        color:white;
+        cursor: pointer;
+    }
+    #model-box-heading{
+        color:black;
+        font-weight: bold;
+        text-align: center;
+    }
+    .modal-dialog{
+        color: black;
+    }
+	.glymphicon_button{
+	 padding-right:30px
+	}
+    #tweets_desc{
+        min-height: 57px;
+    }
+    .selectedFavTag{
+        color:red!important;
+    }
+	#trends{
+        border-bottom: 1px solid #DAE0FD!important;
+	}
+    #trend_name{
+        color:blue;
+    }
+    #errorwindow2{
+        position:absolute;
+        top: 100px;
+    }
+    #errorwindow1{
+        position:absolute;
+        top: 100px;
+    }
+	 #errorwindow3{
+        position:absolute;
+        top: 100px;
+    }

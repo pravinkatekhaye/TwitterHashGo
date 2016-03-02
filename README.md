@@ -1,2 +1,31 @@
 # TwitterHashGo
-HashGo
+
+ //*************************************************Guidlines to follow**********************************************************//
+
+
+ 
+
+   1. Host the application in Tomcat(local host is white listed).
+   2. Run the application.
+   3. Click on "connect to twitter" button which would be there on login page.
+   4. Login is toally based on cookies.If you sign in for first time the you have to login with with your twitter account 
+      on the pop up page of twitter.
+   5. Add your credentials and you will be redirected to the home page of application.
+   6. There are three sections namely :
+      a. Home
+      b. Top trends
+      c. My Favorite Hashtags.
+     
+
+   a. Home : Here you will get to timiline tweets.
+             You can also like the tweets by clicking like button.
+
+   b. Top trends : It will show the top trending hashtags from the world.
+                   However you can filter your search according to cities.
+                   You can also keep track of your Favorite Hashtags and see tweets releated to it by adding them to favorite hashtag list.
+
+   C.  My favorite Hashtags: This section displays all the tweets related to the previously stored hashtags that you have added in the favorite hashtag list. 
+                     
+   
+   
+  
